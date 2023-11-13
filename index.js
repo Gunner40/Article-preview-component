@@ -1,14 +1,30 @@
-const shareIconPassive = document.querySelector(".card__social__shareIcon--1");
-const shareIconActive = document.querySelector(".card__social__shareIcon--2");
-const socialPassive = document.querySelector(".card__social--passive");
-const socialActive = document.querySelector(".card__social--active");
+// main share icon
+const shareIcon = document.querySelector(".share-icon--main");
 
-shareIconPassive.addEventListener("click", () => {
-  socialPassive.classList.toggle("d-none");
-  socialActive.classList.toggle("d-none");
+// popup shareIcon on mobile
+const shareIconPopup = document.querySelector(".share-icon--popUp");
+
+// card social element, we want to change this to display: none when share icon is clicked, the popup element will then take its place
+const socialElement = document.querySelector(".card__social");
+
+// desktop popup element
+const sharePopUp = document.querySelector(".sharePopup");
+
+// mobile popup element
+const sharePopUpMobile = document.querySelector(".sharePopup--mobile");
+
+// listen for clicks on share icon and handle the event for desktop screens
+shareIcon.addEventListener("click", () => {
+  if (window.innerWidth > 900) {
+    sharePopUp.classList.toggle("d-none");
+  } else {
+    socialElement.classList.toggle("d-none");
+    sharePopUpMobile.classList.toggle("d-none");
+  }
 });
 
-shareIconActive.addEventListener("click", () => {
-  socialPassive.classList.toggle("d-none");
-  socialActive.classList.toggle("d-none");
+// listen for clicks on the share icon contained within the mobile popup element, and handle the event
+shareIconPopup.addEventListener("click", () => {
+  socialElement.classList.toggle("d-none");
+  sharePopUpMobile.classList.toggle("d-none");
 });

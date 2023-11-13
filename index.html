@@ -39,7 +39,7 @@
           </div>
 
           <!-- card social  -->
-          <div class="card__social card__social--passive">
+          <div class="card__social">
             <img
               src="./images/avatar-michelle.jpg"
               alt="Michelle avatar"
@@ -49,33 +49,40 @@
               <p class="card__social__name">Michelle Appleton</p>
               <p class="card__social__date">28 Jun 2020</p>
             </div>
-            <a
-              href="#"
-              class="card__social__shareIcon card__social__shareIcon--1"
+            <a href="#" class="share-icon--main"
               ><img src="./images/icon-share.svg" alt="share icon"
             /></a>
           </div>
-          <!-- card social when in active state  -->
-          <div class="card__social card__social--active d-none">
-            <div class="card__social__icons">
-              <span>SHARE</span
-              ><a href="#"
-                ><img src="./images/icon-facebook.svg" alt="facebook link" /></a
-              ><a href="#"
-                ><img src="./images/icon-twitter.svg" alt="twitter link" /></a
-              ><a href="#">
-                <img src="./images/icon-pinterest.svg" alt="pinterest link" />
-              </a>
-            </div>
-            <a
-              href="#"
-              class="card__social__shareIcon card__social__shareIcon--2"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
-                <path
-                  fill="#6E8098"
-                  d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
-                /></svg
-            ></a>
+
+          <!-- desktop share pop up -->
+          <div class="sharePopup d-none">
+            <span>SHARE</span>
+            <a href="#"
+              ><img src="./images/icon-facebook.svg" alt="facebook icon"
+            /></a>
+            <a href="#"
+              ><img src="./images/icon-twitter.svg" alt="twitter icon"
+            /></a>
+            <a href="#"
+              ><img src="./images/icon-pinterest.svg" alt="pinterest icon"
+            /></a>
+          </div>
+
+          <!-- mobile share pop up -->
+          <div class="sharePopup--mobile d-none">
+            <span>SHARE</span>
+            <a href="#"
+              ><img src="./images/icon-facebook.svg" alt="facebook icon"
+            /></a>
+            <a href="#"
+              ><img src="./images/icon-twitter.svg" alt="twitter icon"
+            /></a>
+            <a href="#"
+              ><img src="./images/icon-pinterest.svg" alt="pinterest icon"
+            /></a>
+            <a href="#" class="share-icon--popUp">
+              <img src="./images/icon-share.svg" alt="share icon" />
+            </a>
           </div>
         </div>
       </div>
