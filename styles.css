@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+/* resets */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* custom variables */
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+/* basic styles */
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--Desaturated-Dark-Blue);
+}
+
+main {
+  /* center the card on the screen  */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Light-Grayish-Blue);
+}
+
+/* card styles */
+.card {
+  width: calc(375px - 2em);
+  border-radius: 1em;
+  background-color: white;
+  margin: 4em 20px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  height: 205px;
+  background-image: url("./images/drawers.jpg");
+  background-size: cover;
+  background-position: 50% 25%;
+  border-radius: 1em 1em 0 0;
+}
+
+/* card content styles */
+.card__text {
+  padding: 2em 3em;
+}
+
+.card__text h1 {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--Very-Dark-Grayish-Blue);
+  margin-bottom: 1em;
+}
+
+.card__text p {
+  line-height: 1.5;
+}
+
+/* card social section styles */
+.card__social {
+  padding: 0 3em;
+  height: 6em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  border-radius: 0 0 1em 1em;
+}
+
+.card__social__avatar {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.card__social__name {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+
+.card__social__shareIcon {
+  background-color: var(--Light-Grayish-Blue);
+  padding: 0.5em;
+  border-radius: 100%;
+  margin-left: auto;
+  transition: transform 0.15s ease-in-out;
+}
+
+.card__social__shareIcon:hover {
+  transform: scale(1.1);
+}
+
+.card__social__shareIcon--2 {
+  background-color: var(--Grayish-Blue);
+}
+
+.card__social__shareIcon--2 svg path {
+  fill: #fff;
+}
+
+.card__social--active {
+  background-color: var(--Very-Dark-Grayish-Blue);
+}
+
+.card__social__icons {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.card__social__icons span {
+  letter-spacing: 5px;
+}
+
+.card__social__icons a img {
+  vertical-align: bottom;
+}
+
+.d-none {
+  display: none;
+}
+
+/* desktop styles */
+
+@media screen and (min-width: 900px) {
+  .card {
+    display: flex;
+    width: 750px;
+    position: relative;
+  }
+
+  .card__image {
+    flex-basis: 38%;
+  }
+  .card__content {
+    flex-basis: 60%;
+  }
+
+  .card__image {
+    height: auto;
+    background-position: left center;
+    border-radius: 1em 0 0 1em;
+  }
+
+  .card__text {
+    padding-bottom: 0.5em;
+  }
+
+  .card__text h1 {
+    font-size: 1.5em;
+    margin-bottom: 0.7em;
+  }
+
+  .card__social {
+    height: auto;
+    border-radius: 0.5em;
+    padding: 1.5em 3em;
+  }
+
+  .card__social--active {
+    position: absolute;
+    display: block;
+    left: 555px;
+    top: 120px;
+  }
+
+  .card__social--passive {
+    padding-bottom: 2.5em;
+  }
+
+  .card__social--active:before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 1rem;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+
+  .card__social__shareIcon--2 {
+    display: none;
+  }
+
+  .card__social__icons {
+    gap: 1.3em;
+  }
+}
